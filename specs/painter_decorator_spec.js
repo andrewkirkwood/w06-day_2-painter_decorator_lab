@@ -11,7 +11,7 @@ describe('Painter Decorator', function(){
   let decorator
 
   beforeEach(function() {
-    room = new Room(3)
+    room = new Room(3, "Blue")
     paint = new Paint(10, "Blue")
     // paint2 = new Paint(5, "Green")
     decorator = new Decorator('Jim')
