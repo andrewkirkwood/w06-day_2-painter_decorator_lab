@@ -7,11 +7,13 @@ describe('Painter Decorator', function(){
 
   let room
   let paint
+  // let paint2
   let decorator
 
   beforeEach(function() {
     room = new Room(3)
-    paint = new Paint(10)
+    paint = new Paint(10, "Blue")
+    // paint2 = new Paint(5, "Green")
     decorator = new Decorator('Jim')
   })
   describe('Room', function() {
@@ -54,9 +56,20 @@ describe('Decorator', function() {
   it('can calculate total litres of paint in stock', function() {
     decorator.addPaintToStock(paint)
     decorator.addPaintToStock(paint)
-
     const actual = decorator.calculateStockTotal()
     assert.strictEqual(actual, 20)
+  })
+  it('calculate enough paint to paint room', function() {
+    decorator.addPaintToStock(paint)
+    const actual = decorator.enoughPaint(room)
+    assert.strictEqual(actual, true)
+  })
+  it('paint room', function() {
+    decorator.addPaintToStock(paint)
+    // decorator.addPaintToStock(paint2)
+
+    const actual = decorator.paintRoom(room)
+    assert.strictEqual(actual, 7)
   })
 })
 
