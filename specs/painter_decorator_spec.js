@@ -41,4 +41,16 @@ describe('Paint', function() {
   })
 })
 
+describe('Decorator', function() {
+  it('has empty paint stock', function () {
+    const actual = decorator.paintStock
+    assert.deepStrictEqual(actual, [])
+  })
+  it('can add can of paint to paint stock', function() {
+    decorator.addPaintToStock(paint)
+    const actual = decorator.paintStock.length
+    assert.strictEqual(actual, 1)
+  })
+})
+
 })
