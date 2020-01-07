@@ -34,6 +34,11 @@ describe('Paint', function() {
     const actual = paint.litres
     assert.strictEqual(actual, 10)
   })
+  it('can empty paint', function() {
+    paint.emptyPaint()
+    const actual = paint.litres
+    assert.strictEqual(actual, 0)
+  })
 })
 
 })
