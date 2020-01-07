@@ -53,10 +53,10 @@ describe('Decorator', function() {
   })
   it('can calculate total litres of paint in stock', function() {
     decorator.addPaintToStock(paint)
-    // decorator.addPaintToStock(paint)
+    decorator.addPaintToStock(paint)
 
     const actual = decorator.calculateStockTotal()
-    assert.strictEqual(actual, 10)
+    assert.strictEqual(actual, 20)
   })
 })
 
